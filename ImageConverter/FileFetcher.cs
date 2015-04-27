@@ -142,17 +142,23 @@ namespace ImageConverter
         */
         private void extractFilenameAndExtension(String filePath, ArrayList AddfileName, ArrayList Addext)
         {
-            String[] splitPath = filePath.Split('\\');
-            String[] splitNameAndExtension = splitPath[splitPath.Length - 1].Split('.');
-            String concatName = null;
-            Addext.Add("."+splitNameAndExtension[splitNameAndExtension.Length - 1]);
+            String[] splitPath = filePath.Split('\\');                                   // Split directories and files
+            String[] splitNameAndExtension = splitPath[splitPath.Length - 1].Split('.'); // Split filename and extension 
+                                                                                         // from last index of splitPath array
+            String concatName = null;                                                    // Concats filename with dot(.) 
+            Addext.Add("."+splitNameAndExtension[splitNameAndExtension.Length - 1]);     // add extension to the list 
+            
+            /*
+                Concats a filename with dot(.) which was split above
+                eg : image.bitmap.jpg --> Concats image and bitmap together
+            */
             for (int j = 0; j < splitNameAndExtension.Length - 1; j++)
             {
                 concatName += splitNameAndExtension[j];
                 if (j < splitNameAndExtension.Length - 2)
                     concatName += ".";
             }
-            AddfileName.Add(concatName);
+            AddfileName.Add(concatName);                                                 // Adds filename to the list
         }
 
 
