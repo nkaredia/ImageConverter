@@ -3,7 +3,7 @@
 */
 /*
     Author : Noorsil Karedia
-    Index  : Comments with (/**/)  /*
+    Index  : Comments with /**/  /*
              contains general information for class, variables, and methods
              Comments with ( // ) 
              contains information for that specific statement on the line
